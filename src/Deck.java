@@ -8,6 +8,10 @@ public class Deck {
     private final List<Card> cards = new ArrayList<>();
     private int dealtIndex = 0;
 
+    /**
+     * Create a standard deck with 4 suits and 13 cards for each suit
+     * cards include 2-10, A, J, Q, K
+     */
     public Deck() {
         for (FaceValue faceValue: FaceValue.values()) {
             for (Suit suit: Suit.values()) {
@@ -16,6 +20,9 @@ public class Deck {
         }
     }
 
+    /**
+     * shuffle the cards on the deck
+     */
     public void shuffle() {
         for (int i = 0; i < cards.size() - 1; i++) {
             int j = random.nextInt(cards.size() - i) + i;
@@ -26,6 +33,10 @@ public class Deck {
         }
     }
 
+    /**
+     * Get the remain card number
+     * @return an int value of the remain card number
+     */
     private int remainCards() {
         return cards.size() - dealtIndex;
     }
@@ -46,10 +57,17 @@ public class Deck {
         return cards;
     }
 
+    /**
+     * deal one card
+     * @return the card to deal
+     */
     public Card dealCard() {
         return remainCards() == 0 ? null : cards.get(dealtIndex++);
     }
 
+    /**
+     * reset the deck and shuffle
+     */
     public void reset() {
         dealtIndex = 0;
         shuffle();
