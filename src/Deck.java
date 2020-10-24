@@ -30,6 +30,11 @@ public class Deck {
         return cards.size() - dealtIndex;
     }
 
+    /**
+     * Deal given number of card to the hand
+     * @param num the number of card
+     * @return a Card array of given number, return null if there are not enough cards
+     */
     public Card[] dealHand(int num) {
         if (remainCards() < num) {
             return null;

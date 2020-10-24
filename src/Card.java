@@ -14,4 +14,9 @@ public class Card {
     public Suit suit() {
         return suit;
     }
+
+    @Override
+    public String toString() {
+        return suit.toString() + value.toString();
+    }
 }
