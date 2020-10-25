@@ -15,7 +15,8 @@ class FaceValueTest {
             assertNotNull(FaceValue.valueOf("C"+i));
         }
         assertNotNull(FaceValue.valueOf("ACE"));
-        assertNotNull(FaceValue.valueOf("ACE"));
-        assertNotNull(FaceValue.valueOf("ACE"));
+        assertNotNull(FaceValue.valueOf("QUEEN"));
+        assertNotNull(FaceValue.valueOf("JACK"));
+        assertNotNull(FaceValue.valueOf("KING"));
     }
 }

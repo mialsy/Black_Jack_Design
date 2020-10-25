@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 /**
  * A simple version of black jack game
@@ -15,7 +12,9 @@ public class BlackJackGameAutomator {
 
     public BlackJackGameAutomator(int playerCount) {
         hands = new BlackJackHand[playerCount];
-        Arrays.fill(hands, new BlackJackHand());
+        for (int i = 0; i < hands.length; i++) {
+            hands[i] = new BlackJackHand();
+        }
     }
 
     /**
@@ -112,11 +111,11 @@ public class BlackJackGameAutomator {
      * display the status of the hands including cards, and score
      */
     protected void display() {
-        for (int i = 0; i < hands.length; i++) {
-            System.out.print("Hand " + i + " (" + hands[i].score() + "): ");
-            hands[i].print();
+        Arrays.stream(hands).forEach(hand -> {
+            System.out.print(hand + " (" + hand.score() + "): ");
+            hand.print();
             System.out.println();
-        }
+        });
     }
 
     public void startGame() {
@@ -148,7 +147,7 @@ public class BlackJackGameAutomator {
             return;
         }
 
-        System.out.println("\n Completed game state: ");
+        System.out.println("\nCompleted game state: ");
         display();
         List<Integer> winners = getWinners();
         if (!winners.isEmpty()) {

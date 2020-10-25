@@ -18,6 +18,7 @@ public class Deck {
                 cards.add(new Card(faceValue,suit));
             }
         }
+
     }
 
     /**
@@ -71,5 +72,13 @@ public class Deck {
     public void reset() {
         dealtIndex = 0;
         shuffle();
+    }
+
+    @Override
+    public String toString() {
+        return "Deck{" +
+                "cards=" + cards +
+                ", dealtIndex=" + dealtIndex +
+                '}';
     }
 }
