@@ -118,6 +118,9 @@ public class BlackJackGameAutomator {
         }
     }
 
+    /**
+     * Start game automator
+     */
     public void startGame() {
         initDeck();
 
