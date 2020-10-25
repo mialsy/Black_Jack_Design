@@ -111,11 +111,11 @@ public class BlackJackGameAutomator {
      * display the status of the hands including cards, and score
      */
     protected void display() {
-        Arrays.stream(hands).forEach(hand -> {
-            System.out.print(hand + " (" + hand.score() + "): ");
-            hand.print();
+        for (int i = 0; i < hands.length; i++){
+            System.out.print("hand " + i + " (" + hands[i].score() + "): ");
+            hands[i].print();
             System.out.println();
-        });
+        }
     }
 
     public void startGame() {

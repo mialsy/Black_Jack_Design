@@ -10,8 +10,8 @@ class BlackJackGameAutomatorTest {
 
     @BeforeEach
     void setUp() {
-        System.out.println("Test blackJack game start with random number from 1-10");
-        bja = new BlackJackGameAutomator(new Random().nextInt(10) + 1);
+        System.out.println("Test blackJack game start with random number from 2-10");
+        bja = new BlackJackGameAutomator(new Random().nextInt(9) + 2);
     }
 
     @Test
